@@ -17,23 +17,44 @@
 <body>
     <!-- APP HEADER -->
     <header class="app-header">
-        <h1>Vue Slider</h1>
+        <h1><img src="./img/Vue.png" alt="">ue Slider</h1>
     </header>
-
+    
     <!-- VUE ROOT -->
     <div id="root">
-        <section class="slider" @mouseenter="stopSlide" @mouseleave="startSlide">
+        <!-- MAIN SLIDER -->
+        <section class="main-slider" @mouseenter="stopSlide" @mouseleave="startSlide">
             <!-- Prev Arrow -->
-            <div class="prev" @click="prevImg"><i class="fas fa-chevron-circle-left"></i></div>
+            <div class="prev" @click="prevImg">
+                <i class="fas fa-chevron-left"></i>
+            </div>
             <!-- Images -->
             <div class="images">
-                <img :src="images[indexImg]" alt="">
+                <img :src="images[indexImg][indexPhoto]" alt="current photo">
             </div>
             <!-- Next Arrow -->
-            <div class="next" @click="nextImg"><i class="fas fa-chevron-circle-right"></i></div>
+            <div class="next" @click="nextImg">
+                <i class="fas fa-chevron-right"></i>
+            </div>
             <!-- Dot Nav -->
             <div class="dot-nav">
-                <i v-for="(item, index) in images" class="fas fa-circle" :class="{active: index === indexImg}" @click="dotNav(index)"></i>
+                <i v-for="(item, index) in (images[0].length + images[1].length)" class="fas fa-circle" :class="{active: dotActive(index)}" @click="dotNav(index)"></i>
+            </div>
+        </section>
+
+        <!-- PREVIEW SLIDER -->
+        <section class="preview-slider">
+            <!-- Prev Arrow -->
+            <div class="prev " @click="prevGroup">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>
+            <!-- Group -->
+            <div class="preview">
+                <img v-for="(photo, index) in images[indexGroup]" :src="images[indexGroup][index]" alt="thumbnail" @click="chooseImg(index)">
+            </div>
+             <!-- Next Arrow -->
+            <div class="next" @click="nextGroup" >
+                <i class="fas fa-chevron-circle-right"></i>
             </div>
         </section>
     </div>
