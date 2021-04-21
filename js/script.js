@@ -9,6 +9,10 @@ const app = new Vue({
             'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg',
         ],
         indexImg: 0,
+        intervalID: 0,
+    },
+    created(){
+        this.startSlide();
     },
     methods:{
         prevImg(){
@@ -25,6 +29,14 @@ const app = new Vue({
         },
         dotNav(index){
             this.indexImg = index;
-        }
+        },
+        startSlide(){
+            this.intervalID = setInterval(() => {
+                this.nextImg();
+            }, 1500);
+        },
+        stopSlide(){
+            clearInterval(this.intervalID);
+        },
     }
 });

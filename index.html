@@ -19,10 +19,10 @@
     <header class="app-header">
         <h1>Vue Slider</h1>
     </header>
-    
+
     <!-- VUE ROOT -->
     <div id="root">
-        <section class="slider">
+        <section class="slider" @mouseenter="stopSlide" @mouseleave="startSlide">
             <!-- Prev Arrow -->
             <div class="prev" @click="prevImg"><i class="fas fa-chevron-circle-left"></i></div>
             <!-- Images -->
