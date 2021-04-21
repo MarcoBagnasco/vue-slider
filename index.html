@@ -8,11 +8,37 @@
 
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- FONTAWSOME -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
     <!-- STYLE -->
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
 <body>
+    <!-- APP HEADER -->
+    <header class="app-header">
+        <h1>Vue Slider</h1>
+    </header>
+    <!-- VUE ROOT -->
+    <div id="root">
+        <section class="slider">
+            <!-- Prev Arrow -->
+            <div class="prev"><i class="fas fa-chevron-circle-left"></i></div>
+            <!-- Images -->
+            <div class="images">
+                <img class="active first" src="https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&amp;dl=clouds-country-daylight-371633.jpg&amp;fm=jpg" alt="">
+            </div>
+            <!-- Next Arrow -->
+            <div class="next"><i class="fas fa-chevron-circle-right"></i></div>
+            <!-- Dot Nav -->
+            <div class="dot-nav">
+                <i class="fas fa-circle active"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+            </div>
+        </section>
+    </div>
     <!-- JAVASCRIPT -->
     <script src="./js/script.js"></script>
 </body>

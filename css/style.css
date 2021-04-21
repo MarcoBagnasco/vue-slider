@@ -1,0 +1,79 @@
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+}
+h1{
+    margin-bottom: 20px;
+    font-size: 60px;
+    text-align: center;
+}
+
+/* SLIDER */
+.slider{
+    position: relative;
+}
+/* Arrows */
+.slider .prev,
+.slider .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    color: rgba(0, 0, 0, .5);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider .prev{
+    left: 20px;
+}
+.slider .next{
+    right: 20px;
+}
+.slider .prev:hover,
+.slider .next:hover{
+    color: #000;
+    background-color: #fff;
+}
+/* Images */
+.slider .images{
+    height: 600px;
+}
+.images img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* Dot Nav */
+.slider .dot-nav{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+}
+.dot-nav i{
+    color:rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+.dot-nav i:hover{
+    color: #fff;
+}
+.dot-nav i.active{
+    color: dodgerblue;
+}
