@@ -19,26 +19,25 @@
     <header class="app-header">
         <h1>Vue Slider</h1>
     </header>
+    
     <!-- VUE ROOT -->
     <div id="root">
         <section class="slider">
             <!-- Prev Arrow -->
-            <div class="prev"><i class="fas fa-chevron-circle-left"></i></div>
+            <div class="prev" @click="prevImg"><i class="fas fa-chevron-circle-left"></i></div>
             <!-- Images -->
             <div class="images">
-                <img class="active first" src="https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&amp;dl=clouds-country-daylight-371633.jpg&amp;fm=jpg" alt="">
+                <img :src="images[indexImg]" alt="">
             </div>
             <!-- Next Arrow -->
-            <div class="next"><i class="fas fa-chevron-circle-right"></i></div>
+            <div class="next" @click="nextImg"><i class="fas fa-chevron-circle-right"></i></div>
             <!-- Dot Nav -->
             <div class="dot-nav">
-                <i class="fas fa-circle active"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <i v-for="(item, index) in images" class="fas fa-circle" :class="{active: index === indexImg}" @click="dotNav(index)"></i>
             </div>
         </section>
     </div>
+
     <!-- JAVASCRIPT -->
     <script src="./js/script.js"></script>
 </body>
